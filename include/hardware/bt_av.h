@@ -112,9 +112,13 @@ typedef enum {
  */
 typedef void (* btav_is_multicast_enabled_callback)(int state);
 
-/** Callback to notify reconfig a2dp when A2dp Soft Handoff is triggered
+/* Callback to notify reconfig a2dp when A2dp Soft Handoff is triggered
+** params: reason: reason for reconfig, either softhandoff or reconfiguring a2dp params
+** bd_addr: bd address.
+** reconfig_a2dp_param_id: This can be either bitrate or bitper sample.
+** reconfig_a2dp_param_val: values for either bitrate / bitspersample.
 */
-typedef void(* btav_reconfig_a2dp_trigger_callback)(int reason, RawAddress *bd_addr);
+typedef void(* btav_reconfig_a2dp_trigger_callback)(int reason, RawAddress *bd_addr, int reconfig_a2dp_param_id, int reconfig_a2dp_param_val);
 
 /*
  * Structure for representing codec capability or configuration.
