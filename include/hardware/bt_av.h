@@ -237,6 +237,9 @@ typedef struct {
 
     /** Send priority of device to stack*/
     void (*allow_connection)( int is_valid , RawAddress *bd_addr);
+
+    /* Interface to Switch streaming from UI*/
+    bt_status_t (*select_audio_device)( RawAddress *bd_addr );
 } btav_source_interface_t;
 
 /** Represents the standard BT-AV A2DP Sink interface.
